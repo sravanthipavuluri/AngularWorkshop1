@@ -8,7 +8,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { ResetpasswordComponent } from './resetpassword/resetpassword.component';
 
-const appRoutes: Routes = [{path:'',redirectTo:'/reg',pathMatch:'full'},
+const appRoutes: Routes = [{path:'',redirectTo:'/login',pathMatch:'full'},
   {path:'reg',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'resetpwd',component:ResetpasswordComponent}];
