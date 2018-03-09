@@ -1,0 +1,56 @@
+<div class="container-fluid" style="margin:0px;">
+  <div class="row bannercolor">
+    <div class="col-md-12">
+        <img class="bannerimg" src="../assets/images/dllogo.png">
+    </div>
+  </div>
+  <div class="row dltxtdiv">
+    <div class="col-md-12">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-3">
+                <p class="Digital-Lync-Welcome">Digital Lync<br>Welcomes<br>You To</p>                
+            </div>
+            <div class="col-md-1 vl"></div>
+            <div class="col-md-1 vl"></div>
+            <div class="col-md-1 vl"></div>
+            <div class="col-md-6 formbox">
+              <p class="regFormTxt">Registration Form</p>
+              <form [formGroup]="registrationForm" novalidate>
+                  <div class="form-group">                     
+                      <input class="form-control" formControlName="firstName" placeholder="First name">                      
+                  </div>
+                  <div class="form-group">                     
+                      <input class="form-control" formControlName="lastName" placeholder="Last name">                      
+                  </div>
+                  <div class="form-group">                     
+                      <input class="form-control" formControlName="email" placeholder="Email">                      
+                  </div> 
+                  <div class="form-group">                     
+                      <input class="form-control" formControlName="mobile" placeholder="Mobile">                      
+                  </div>
+                  <div class="form-group">                     
+                      <select class="form-control" formControlName="wrkstatus">
+                          <option *ngFor="let status of workStatus" [value]="status">{{status}}</option>
+                      </select>                     
+                  </div>
+                  <div class="form-group">                     
+                      <select class="form-control" formControlName="techInterests" placeholder="Technology">                          
+                          <option *ngFor="let tinterest of techInterest" [value]="tinterest">{{tinterest}}</option>
+                      </select>                     
+                  </div>
+                  <div class="form-group">    
+                      <button (click)="registerData();" [disabled]="!registrationForm.valid" class="btn btn-primary">Submit</button>
+                      <button type="button" (click)="revert()" [disabled]="registrationForm.pristine" class="btn btn-danger">Revert</button>
+                  </div>
+
+              </form>              
+              <p>Form value: {{ registrationForm.value | json }}</p>
+              <p>Form status: {{ registrationForm.status | json }}</p>
+              <p>Form status: {{ registrationForm.valid | json }}</p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
