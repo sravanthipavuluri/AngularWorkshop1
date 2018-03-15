@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { person } from '../DataSet';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
  
-  
+  perObj:person;
 
-  constructor() { }
+  constructor() { 
+    this.perObj={
+      name: "SravanthiPavuluri",      
+      email : "spavuluri@digitallyhnctech.com" ,
+      college :  "St.Ann's College",
+      city : "Guntur",
+      workingstatus :"Employee",
+      technologies:"Fullstack Development",
+      profilepic:"../assets/images/mypic.jpg"
+    } 
+  }
 
   ngOnInit() {
   }

@@ -12,7 +12,7 @@
   .profiletxt{
     color:#00426f;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 12px;
   }
   .profilename{
     float:left;
@@ -22,4 +22,28 @@
   hr{
       border:1px solid lightgray;
   }
+  .profileimg{    
+    width: 100px;
+    height: 100px;    
+  }
+  .profiletable{
+      margin:50px;   
+      background-color: lightskyblue;
+      color:#00426f;
+      width:90%;
+  }
   
+  .evenrow{
+      background-color: #cde8f7;
+  }
+  .oddrow{
+    background-color: white;
+}
+button{
+    width:70px;
+    padding:5px;
+    background-color: #00426f;
+    color:white;
+    border-radius: 5px;
+    outline: none;
+}

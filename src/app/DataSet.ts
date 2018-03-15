@@ -8,3 +8,12 @@ export class register{
     work:string="";
     tinterest:string="";
 }
+export class person{
+    name:string="";
+    email:string="";
+    college:string="";
+    city:string="";
+    workingstatus:string="";
+    technologies:string="";
+    profilepic:string="";
+}
