@@ -1,4 +1,4 @@
-<div class="container-fluid" style="margin:0px;">
+<div class="container-fluid">
   <div class="row bannercolor">
     <div class="col-md-12">
         <img class="bannerimg" src="../assets/images/dllogo.png">
@@ -16,58 +16,103 @@
             <div class="col-md-1 vl"><p class="txtVertical">W<br>O<br>R<br>K<br>S<br>H<br>O<br>P</p></div>
             <div class="col-md-6 formbox">                    
               <p class="regFormTxt">Registration Form</p>
-              <form [formGroup]="registrationForm" novalidate>                  
-                  <div class="form-group">                     
-                      <input class="form-control" formControlName="firstName" placeholder="First name">                      
-                  </div>
-                  <div *ngIf="registrationForm.controls.firstName.invalid && registrationForm.controls.firstName.touched">
-                    <p class="errormsg">firstName is invalid</p>
-                  </div>
-                  <div class="form-group">                     
-                      <input class="form-control" formControlName="lastName" placeholder="Last name">                      
-                  </div>
-                  <div *ngIf="registrationForm.controls.lastName.invalid && registrationForm.controls.lastName.touched">
-                    <p class="errormsg">lastName is invalid</p>
-                  </div>
-                  <div class="form-group">                     
-                      <input class="form-control" formControlName="email" placeholder="Email">                      
-                  </div> 
-                  <div *ngIf="registrationForm.controls.email.invalid && registrationForm.controls.email.touched" class="errormsg">                
-                        <div *ngIf = "registrationForm.controls.email.errors?.required">
-                            Email field can't be blank
-                        </div>                
-                        <div *ngIf = "registrationForm.controls.email.errors?.pattern">
-                            Email is invalid
-                        </div>                
-                  </div>
-                  <div class="form-group">                     
-                      <input class="form-control" formControlName="mobile" placeholder="Mobile">                      
-                  </div>
-                  <div *ngIf="registrationForm.controls.mobile.invalid && registrationForm.controls.mobile.touched">
-                    <p class="errormsg">mobile is invalid</p>
-                  </div>
-                  <div class="form-group">                     
-                      <select class="form-control" formControlName="wrkstatus">
-                          <option *ngFor="let status of workStatus" [value]="status">{{status}}</option>
-                      </select>                     
-                  </div>
-                  <div *ngIf="registrationForm.controls.wrkstatus.invalid && registrationForm.controls.wrkstatus.required">
-                    <p class="errormsg">Work Status is invalid</p>
-                  </div>
-                  <div class="form-group">                     
-                      <select class="form-control" formControlName="techInterests" placeholder="Technology">                          
-                          <option *ngFor="let tinterest of techInterest" [value]="tinterest">{{tinterest}}</option>
-                      </select>                     
-                  </div>
-                  <div class="form-group">    
-                      <button (click)="registerData();" [disabled]="!registrationForm.valid" class="btn btn-primary">Submit</button>
-                      <!-- <button type="button" (click)="revert()" [disabled]="registrationForm.pristine" class="btn btn-danger">Revert</button> -->
-                  </div>
+              <form [formGroup]="registrationForm" novalidate>  
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6">
+                                <div class="form-group">                     
+                                        <input class="form-control" formControlName="firstName" placeholder="First name">                                         
+                                </div>                                                   
+                        </div>
+                        <div class="col-md-6">
+                                <div *ngIf="registrationForm.controls.firstName.invalid && registrationForm.controls.firstName.touched">
+                                        <p class="errormsg">firstName is invalid</p>
+                                </div>                                       
+                        </div>                        
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <div class="form-group">                     
+                                            <input class="form-control" formControlName="lastName" placeholder="Last name">                      
+                                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <div *ngIf="registrationForm.controls.lastName.invalid && registrationForm.controls.lastName.touched">
+                                            <p class="errormsg">lastName is invalid</p>
+                                          </div>
+                            </div>
+                    </div>                    
+                    <div class="row">
+                            <div class="col-md-6"> 
+                                <div class="form-group">                     
+                                    <input class="form-control" formControlName="email" placeholder="Email">                      
+                                </div>
+                             </div>
+                            <div class="col-md-6">
+                                    <div *ngIf="registrationForm.controls.email.invalid && registrationForm.controls.email.touched" class="errormsg">                
+                                            <div *ngIf = "registrationForm.controls.email.errors?.required">
+                                                email field can't be blank
+                                            </div>                
+                                            <div *ngIf = "registrationForm.controls.email.errors?.pattern">
+                                                email is invalid
+                                            </div>                
+                                      </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <div class="form-group">                     
+                                            <input class="form-control" formControlName="mobile" placeholder="Mobile">                      
+                                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <div *ngIf="registrationForm.controls.mobile.invalid && registrationForm.controls.mobile.touched">
+                                            <p class="errormsg">mobile is invalid</p>
+                                          </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <div class="form-group">                     
+                                            <select class="form-control" formControlName="wrkstatus">
+                                                <option *ngFor="let status of workStatus" [value]="status">{{status}}</option>
+                                            </select>                     
+                                        </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <div *ngIf="registrationForm.controls.wrkstatus.invalid && registrationForm.controls.wrkstatus.required">
+                                            <p class="errormsg">work Status is invalid</p>
+                                          </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <div class="form-group">                     
+                                            <select class="form-control" formControlName="techInterests" placeholder="Technology">                          
+                                                <option *ngFor="let tinterest of techInterest" [value]="tinterest">{{tinterest}}</option>
+                                            </select>                     
+                                        </div>
 
-              </form>              
-              <p>Form value: {{ registrationForm.value | json }}</p>
+                            </div>
+                            <div class="col-md-6">
+
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-md-6">
+                                    <div class="form-group">    
+                                            <button (click)="registerData();" [disabled]="!registrationForm.valid" class="btn btn-primary">Submit</button>                                            
+                                        </div>
+                            </div>
+                            <div class="col-md-6"></div>
+                    </div>
+                </div>  
+              </form>     
+              <!-- <p>invalid: {{registrationForm.controls.wrkstatus.invalid}}</p>         
+              <p>required:{{registrationForm.controls.wrkstatus.required}}</p>          -->
+              <!-- <p>Form value: {{ registrationForm.value | json }}</p>
               <p>Form status: {{ registrationForm.status | json }}</p>
-              <p>Form status: {{ registrationForm.valid | json }}</p>
+              <p>Form status: {{ registrationForm.valid | json }}</p> -->
             </div>
           </div>
         </div>

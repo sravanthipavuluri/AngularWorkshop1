@@ -1,5 +1,6 @@
 import { Component , OnChanges } from '@angular/core';
 import { FormControl , FormGroup , FormBuilder , Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,7 +9,8 @@ import { FormControl , FormGroup , FormBuilder , Validators} from '@angular/form
 })
 export class LoginComponent {
   loginForm: FormGroup; 
-  constructor(private fb: FormBuilder) { 
+  successlogin:boolean=true;
+  constructor(private fb: FormBuilder,private router:Router) { 
     this.createForm(); 
   }
   createForm() {
@@ -17,13 +19,13 @@ export class LoginComponent {
       password:['',Validators.compose([ Validators.required,Validators.minLength(8)])]           
     });
   }
-  registerData(){
-    alert("Successfully Submitted.....");
-  }
-    ngOnChanges() {
-      this.loginForm.reset({
-        name: "",
-        address: ""
-      });
+  loginData(){   
+    if(this.loginForm.value.email=='admin@dl.com' && this.loginForm.value.password=='admin123'){
+      this.successlogin=true;
+      this.router.navigate(['/dashboard']);
+    }else{
+      this.successlogin=false;
     }
+  }
+   
 }

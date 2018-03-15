@@ -32,36 +32,19 @@
     margin-top:80px;
     margin-left:150px;    
     padding-top: 20px;
-    padding-left: 80px;  
-    padding-bottom:30px;    
+    padding-left: 10px; 
+    padding-bottom:30px;     
     border-radius: 16px;
     background-color: #ffffff;
     border: solid 1px #979797;
   }
   .regFormTxt{
     font-family: Roboto;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
-    color:#00426f;
+    color:lightblack;
     margin-bottom: 50px;
-  }
-  input{  
-    border:none;
-    border-bottom:2px solid gray;
-    width:200px;
-    outline: none;    
-  }
-  input:focus{
-    outline: none; 
-  }
-  select{
-    outline: none;
-    border:0px;
-    border: 1px solid lightgray;
-    width:200px;
-  }
-  .errormsg{
-    color:red;
+    text-align: center;
   }
   .txtVertical 
   {	    
@@ -72,4 +55,9 @@
     margin-top: 0px;
     margin-left: 10px;
     padding: 0px;
+  }
+  .smileimg{
+      width:100px;
+      height:100px;
+      margin-left:180px;  
   }

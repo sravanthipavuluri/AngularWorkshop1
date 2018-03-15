@@ -1,0 +1,25 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.listimg{
+    margin:20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    float:right;
+  }
+  .profiletxt{
+    color:#00426f;
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .profilename{
+    float:left;
+    margin:20px;
+    font-size: 20px;
+  }
+  hr{
+      border:1px solid lightgray;
+  }
+  

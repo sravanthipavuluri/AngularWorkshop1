@@ -1,6 +1,7 @@
 import { Component , OnChanges } from '@angular/core';
 import { FormControl , FormGroup , FormBuilder , Validators} from '@angular/forms';
-import { workStatus,techInterest } from './Dataset';
+import { workStatus,techInterest,register } from '../Dataset';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class RegistrationComponent {
   registrationForm: FormGroup; 
   workStatus = workStatus;
   techInterest = techInterest;
-  constructor(private fb: FormBuilder) { 
+  robj:register;
+  constructor(private fb: FormBuilder,private router: Router) { 
     this.createForm(); 
   }
 
@@ -24,22 +26,36 @@ export class RegistrationComponent {
       email:['',Validators.compose([Validators.required ,Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')])],                                                                             
       mobile:['',Validators.compose([Validators.required,Validators.pattern('\\d{9}')])],
       wrkstatus:['Work Status',Validators.required],
-      techInterests:['',Validators.required]
-      // address: this.fb.group({ // <-- the child FormGroup
-      //   street: ['', Validators.required ],
-      //   city: ['', Validators.required ],
-      //   location: ['', Validators.required ],
-      //   zip: ['', Validators.compose([Validators.required ,Validators.minLength(5),Validators.pattern('\\d{5}')])]
-      //  })      
+      techInterests:['',Validators.required]         
     });
   }
-  registerData(){
-    alert("Successfully Submitted.....");
+  registerData(){    
+    this.robj={
+      firstName:this.registrationForm.value.firstName,
+      lastName :  this.registrationForm.value.lastName,
+      email :  this.registrationForm.value.email,
+      mobile :  this.registrationForm.value.mobile,
+      work :  this.registrationForm.value.wrkstatus,
+      tinterest :  this.registrationForm.value.techInterests
+    }   
+    console.log("firstName : "+this.robj.firstName);
+    console.log("lastName : "+this.robj.lastName);
+    console.log("email : "+this.robj.email);
+    console.log("mobile : "+this.robj.mobile);
+    console.log("work : "+this.robj.work);
+    console.log("tinterest : "+this.robj.tinterest);
+    this.resetvalues();    
+    this.router.navigate(['/confirm']);
+    
   }
-    ngOnChanges() {
+    resetvalues() {
       this.registrationForm.reset({
-        name: "",
-        address: ""
+        firstName: "",
+        lastName: "",
+        email:"",
+        mobile:"",
+        wrkstatus:"",
+        techInterests:""
       });
     }
 

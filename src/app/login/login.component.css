@@ -1,58 +1,80 @@
 .bannercolor{
-    background-color: white;
+  background-color: white;
 }
 .bannerimg{
-    width: 200px;
-    height: 80px;
+  width: 200px;
+  height: 80px;
 }
 .Digital-Lync-Welcome {
-    margin-top: 150px;
-    margin-left: 50px;
-    font-family: Roboto;
-    font-size: 52px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 100px;
-    letter-spacing: 1.4px;
-    text-align: left;
-    color: #ffffff;  
-  }
-  .dltxtdiv {        
-    background-color: #00426f;    
-    background-image: linear-gradient(to right, #00426f, #09568a, #1b80c3);
-  }
-  .vl {
-    border-left: 30px solid white;
-    height: 780px;
-    transform: rotate(180deg);
+  margin-top: 150px;
+  margin-left: 50px;
+  font-family: Roboto;
+  font-size: 52px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 100px;
+  letter-spacing: 1.4px;
+  text-align: left;
+  color: #ffffff;  
+}
+.dltxtdiv {        
+  background-color: #00426f;    
+  background-image: linear-gradient(to right, #00426f, #09568a, #1b80c3);
+}
+.vl {
+  border-left: 30px solid white;
+  height: 650px;
+  transform: rotate(180deg);
 }
 .formbox {
-    width: 500px;
-    margin-top:80px;
-    margin-left:150px;    
-    padding-top: 20px;
-    padding-left: 80px;    
-    border-radius: 16px;
-    background-color: #ffffff;
-    border: solid 1px #979797;
-  }
-  .regFormTxt{
-    font-family: Roboto;
-    font-size: 40px;
-    font-weight: bold;
-    color:#00426f;
-    margin-bottom: 50px;
-  }
-  input{
-    outline: 0px;
-    border:0px;
-    /* border-bottom: 1px solid black; */
-    width:350px;
-  }
-  select{
-    outline: none;
-    border:0px;
-    /* border-bottom: 1px solid black; */
-    width:350px;
-  }
+  width: 500px;
+  margin-top:80px;
+  margin-left:150px;  
+  padding-bottom:30px;  
+  padding-top: 20px;
+  padding-left: 80px;    
+  border-radius: 16px;
+  background-color: #ffffff;
+  border: solid 1px #979797;
+}
+.regFormTxt{
+  font-family: Roboto;
+  font-size: 40px;
+  font-weight: bold;
+  color:#00426f;
+  margin-bottom: 50px;
+}
+input{  
+  border:none;
+  border-bottom:2px solid gray;
+  width:200px;
+  outline: none;    
+}
+input:focus{
+  outline: none; 
+}
+select{
+  outline: none;
+  border:0px;
+  border: 1px solid lightgray;
+  width:200px;
+}
+.errormsg{
+  color:red;
+}
+.txtVertical 
+{	    
+  transform: rotate(-180deg);  
+  position: absolute;     
+  color:white;
+  font-size: 45px;
+  margin-top: 0px;
+  margin-left: 10px;
+  padding: 0px;
+}
+.resettxt{
+  color:lightgray;
+  text-decoration: none;
+  outline:none;
+}
