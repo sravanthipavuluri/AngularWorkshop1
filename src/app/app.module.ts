@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule,Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -11,13 +12,16 @@ import { ConfirmComponent } from './confirm/confirm.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { Profile } from 'selenium-webdriver/firefox';
+import { ProfileeditComponent } from './profileedit/profileedit.component';
 
 const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
   {path:'reg',component:RegistrationComponent},
   {path:'confirm',component:ConfirmComponent},
   {path:'login',component:LoginComponent},
   {path:'resetpwd',component:ResetpasswordComponent},
-  {path:'dashboard',component:DashboardComponent,children:[ {path:'profile',component:ProfileComponent},{path:'users',component:ProfileComponent} ]},   
+  {path:'dashboard',component:DashboardComponent,
+  children:[ {path:'profile',component:ProfileComponent,children:[{path:'profileedit',component:ProfileeditComponent}]},
+             {path:'users',component:ProfileComponent} ]},   
 ];
 @NgModule({
   declarations: [
@@ -27,10 +31,12 @@ const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
     ResetpasswordComponent,
     ConfirmComponent,
     DashboardComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfileeditComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],

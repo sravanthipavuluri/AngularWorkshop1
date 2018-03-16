@@ -10,7 +10,7 @@
             <hr>
         </div>
     </div>
-    <div class="row">        
+    <div class="row" *ngIf="!editclk">        
         <div class="col-md-12">
             <table class="table table-stripped profiletable">
                 <tr class="evenrow">
@@ -51,10 +51,115 @@
                     <td>{{perObj.technologies}}</td>
                 </tr>
                 <tr class="oddrow">
-                    <td colspan="2"><button>Edit</button></td>
+                    <td colspan="2"><button (click)="EditProfile();">Edit</button></td>
                     <td> </td>
                 </tr>
             </table>
         </div>
+    </div>
+    <div class="row" *ngIf="editclk">                    
+            <div class="col-md-12">
+                <!-- <form #profileForm="ngForm" novalidate>   -->
+                <form class="form-horizontal" #profileForm = "ngForm">
+                    <table class="table table-stripped profiletable">
+                        <tr class="evenrow">
+                            <td colspan="8">
+                                Profile Photo<br>                        
+                                <img class="profileimg" src="{{perObj.profilepic}}">
+                            </td>                                               
+                        </tr>
+                        <tr class="oddrow">
+                            <td>Name</td>
+                            <td>:</td>
+                            <td>
+                                <label id="name" *ngIf="namelblenable">{{perObj.name}}</label>
+                                <input type="text" name="txtname" [(ngModel)]="perObj.name" *ngIf="!namelblenable">
+                            </td>
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('name');"></td>
+                            <td>Email</td>
+                            <td>:</td>
+                            <td>
+                                <label id="email" *ngIf="emaillblenable">{{perObj.email}}</label>                                
+                                <input type="text" name="txtemail" [(ngModel)]="perObj.email" *ngIf="!emaillblenable">                                
+                            </td>
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('email');"></td>
+                        </tr>
+                        <tr class="evenrow">
+                            <td>City</td>
+                            <td>:</td>
+                            <td>
+                                <label id="city" *ngIf="citylblenable">{{perObj.city}}</label>                                
+                                <input type="text" name="txtcity" [(ngModel)]="perObj.city" *ngIf="!citylblenable">  
+                            </td>
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('city');"></td>
+                            <td>College</td>
+                            <td>:</td>
+                            <td>
+                                <label id="college" *ngIf="collblenable">{{perObj.college}}</label>                                
+                                <input type="text" name="txtcollege" [(ngModel)]="perObj.college" *ngIf="!collblenable">
+                            </td>   
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('college');"></td>                             
+                        </tr>
+                        <tr class="oddrow">
+                                <td>Specialization</td>
+                                <td>:</td>
+                                <td>
+                                    <label id="specialization" *ngIf="splblenable">{{perObj.specialization}}</label>                                
+                                    <input type="text" name="txtspecialization" [(ngModel)]="perObj.specialization" *ngIf="!splblenable">
+                                </td>
+                                <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('specialization');"></td>
+                                <td>Year Of Pass</td>
+                                <td>:</td>
+                                <td>
+                                    <label id="yearofpass" *ngIf="yoplblenable">{{perObj.yearOfpass}}</label>                                
+                                    <input type="text" name="txtyearofpass" [(ngModel)]="perObj.yearOfpass" *ngIf="!yoplblenable">
+                                </td>
+                                <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('yearofpass');"></td>
+                        </tr>
+                        <tr class="evenrow">
+                            <td colspan="8">
+                                If you are an employee  <input type="checkbox" name="empchk" (click)="enableDisableData($event);" 
+                                ng-model="checked" checked="checked">
+                                <!-- If you are an employee  <input   type="input"   name="c"   value="&#8730;"   class="chx" 
+                                  onclick="this.value=this.value=='&#8730;'?'':'&#8730;';"   readonly> -->
+                            </td>
+                        </tr>
+                       
+                        <tr class="oddrow" *ngIf="!empDisable">
+                            <td>Organization Name</td>
+                            <td>:</td>
+                            <td>
+                                <label id="organization" *ngIf="orglblenable">{{perObj.orgName}}</label>                                
+                                <input type="text" name="txtorganization" [(ngModel)]="perObj.orgName" *ngIf="!orglblenable">
+                            </td>
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('organization');"></td>
+                            <td>Work Experience</td>
+                            <td>:</td>
+                            <td>
+                                <label id="work" *ngIf="wrklblenable">{{perObj.wrkexp}}</label>                                
+                                <input type="text" name="txtwork" [(ngModel)]="perObj.wrkexp" *ngIf="!wrklblenable">
+                            </td>  
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('work');"></td>                          
+                        </tr>
+                        <tr class="evenrow" *ngIf="!empDisable">
+                            <td>Technologies</td>
+                            <td>:</td>
+                            <td>
+                                <label id="technology" *ngIf="techlblenable">{{perObj.technologies}}</label>                                
+                                <input type="text" name="txttechnology" [(ngModel)]="perObj.technologies" *ngIf="!techlblenable">
+                            </td>
+                            <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('technology');"></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr class="oddrow">
+                            <td colspan="8"><button (click)="SaveProfile();">Save</button></td>                            
+                        </tr>
+                    </table>
+                   </form>
+                   <!-- <p>Form value: {{ profileForm.value | json }}</p> -->
+                </div>
     </div>
 </div>

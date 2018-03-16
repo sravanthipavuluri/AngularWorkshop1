@@ -16,4 +16,10 @@ export class person{
     workingstatus:string="";
     technologies:string="";
     profilepic:string="";
+    specialization:string="";
+    yearOfpass:string="";
+    orgName:string="";
+    wrkexp:string="";
+    profileeditpic:string="";
+
 }

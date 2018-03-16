@@ -26,6 +26,10 @@
     width: 100px;
     height: 100px;    
   }
+  .profileeditimg{    
+    width: 20px;
+    height: 20px;    
+  }
   .profiletable{
       margin:50px;   
       background-color: lightskyblue;
@@ -46,4 +50,18 @@ button{
     color:white;
     border-radius: 5px;
     outline: none;
+}
+.chx {    
+    background-color:#00426f;
+    font-weight:bold;
+    font-size:20px;
+    width:20px;
+    height:20px;
+    color:white;
+    border:none;
+    cursor: auto;
+}
+input[type=text]{
+    width:200px;
+    padding:5px;
 }
