@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { Profile } from 'selenium-webdriver/firefox';
 import { ProfileeditComponent } from './profileedit/profileedit.component';
+import { UsersComponent } from './users/users.component';
 
 const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
   {path:'reg',component:RegistrationComponent},
@@ -21,7 +22,7 @@ const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
   {path:'resetpwd',component:ResetpasswordComponent},
   {path:'dashboard',component:DashboardComponent,
   children:[ {path:'profile',component:ProfileComponent,children:[{path:'profileedit',component:ProfileeditComponent}]},
-             {path:'users',component:ProfileComponent} ]},   
+             {path:'users',component:UsersComponent} ]},   
 ];
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
     ConfirmComponent,
     DashboardComponent,
     ProfileComponent,
-    ProfileeditComponent
+    ProfileeditComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

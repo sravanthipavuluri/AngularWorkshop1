@@ -12,6 +12,7 @@
     </div>
     <div class="row" *ngIf="!editclk">        
         <div class="col-md-12">
+            <p></p>
             <table class="table table-stripped profiletable">
                 <tr class="evenrow">
                     <td colspan="2">
@@ -55,6 +56,7 @@
                     <td> </td>
                 </tr>
             </table>
+            
         </div>
     </div>
     <div class="row" *ngIf="editclk">                    
@@ -72,15 +74,18 @@
                             <td>Name</td>
                             <td>:</td>
                             <td>
-                                <label id="name" *ngIf="namelblenable">{{perObj.name}}</label>
-                                <input type="text" name="txtname" [(ngModel)]="perObj.name" *ngIf="!namelblenable">
+                                <!-- <label id="name" *ngIf="namelblenable">{{perObj.name}}</label>
+                                <input type="text" name="txtname" [(ngModel)]="perObj.name" *ngIf="!namelblenable"> -->
+                            
+                                <label id="name" [ngClass]="namelblenable?'fieldView':'fieldViewToggle'">{{perObj.name}}</label>
+                                <input type="text" name="txtname" [(ngModel)]="perObj.name" [ngClass]="!namelblenable?'fieldView':'fieldViewToggle'">
                             </td>
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('name');"></td>
                             <td>Email</td>
                             <td>:</td>
                             <td>
-                                <label id="email" *ngIf="emaillblenable">{{perObj.email}}</label>                                
-                                <input type="text" name="txtemail" [(ngModel)]="perObj.email" *ngIf="!emaillblenable">                                
+                                <label id="email" [ngClass]="emaillblenable?'fieldView':'fieldViewToggle'">{{perObj.email}}</label>                                
+                                <input type="text" name="txtemail" [(ngModel)]="perObj.email" [ngClass]="!emaillblenable?'fieldView':'fieldViewToggle'">                                
                             </td>
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('email');"></td>
                         </tr>
@@ -88,15 +93,15 @@
                             <td>City</td>
                             <td>:</td>
                             <td>
-                                <label id="city" *ngIf="citylblenable">{{perObj.city}}</label>                                
-                                <input type="text" name="txtcity" [(ngModel)]="perObj.city" *ngIf="!citylblenable">  
+                                <label id="city" [ngClass]="citylblenable?'fieldView':'fieldViewToggle'">{{perObj.city}}</label>                                
+                                <input type="text" name="txtcity" [(ngModel)]="perObj.city" [ngClass]="!citylblenable?'fieldView':'fieldViewToggle'">  
                             </td>
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('city');"></td>
                             <td>College</td>
                             <td>:</td>
                             <td>
-                                <label id="college" *ngIf="collblenable">{{perObj.college}}</label>                                
-                                <input type="text" name="txtcollege" [(ngModel)]="perObj.college" *ngIf="!collblenable">
+                                <label id="college" [ngClass]="collblenable?'fieldView':'fieldViewToggle'">{{perObj.college}}</label>                                
+                                <input type="text" name="txtcollege" [(ngModel)]="perObj.college" [ngClass]="!collblenable?'fieldView':'fieldViewToggle'">
                             </td>   
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('college');"></td>                             
                         </tr>
@@ -104,15 +109,15 @@
                                 <td>Specialization</td>
                                 <td>:</td>
                                 <td>
-                                    <label id="specialization" *ngIf="splblenable">{{perObj.specialization}}</label>                                
-                                    <input type="text" name="txtspecialization" [(ngModel)]="perObj.specialization" *ngIf="!splblenable">
+                                    <label id="specialization" [ngClass]="splblenable?'fieldView':'fieldViewToggle'">{{perObj.specialization}}</label>                                
+                                    <input type="text" name="txtspecialization" [(ngModel)]="perObj.specialization" [ngClass]="!splblenable?'fieldView':'fieldViewToggle'">
                                 </td>
                                 <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('specialization');"></td>
                                 <td>Year Of Pass</td>
                                 <td>:</td>
                                 <td>
-                                    <label id="yearofpass" *ngIf="yoplblenable">{{perObj.yearOfpass}}</label>                                
-                                    <input type="text" name="txtyearofpass" [(ngModel)]="perObj.yearOfpass" *ngIf="!yoplblenable">
+                                    <label id="yearofpass" [ngClass]="yoplblenable?'fieldView':'fieldViewToggle'">{{perObj.yearOfpass}}</label>                                
+                                    <input type="text" name="txtyearofpass" [(ngModel)]="perObj.yearOfpass" [ngClass]="!yoplblenable?'fieldView':'fieldViewToggle'">
                                 </td>
                                 <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('yearofpass');"></td>
                         </tr>
@@ -129,15 +134,15 @@
                             <td>Organization Name</td>
                             <td>:</td>
                             <td>
-                                <label id="organization" *ngIf="orglblenable">{{perObj.orgName}}</label>                                
-                                <input type="text" name="txtorganization" [(ngModel)]="perObj.orgName" *ngIf="!orglblenable">
+                                <label id="organization" [ngClass]="orglblenable?'fieldView':'fieldViewToggle'">{{perObj.orgName}}</label>                                
+                                <input type="text" name="txtorganization" [(ngModel)]="perObj.orgName" [ngClass]="!orglblenable?'fieldView':'fieldViewToggle'">
                             </td>
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('organization');"></td>
                             <td>Work Experience</td>
                             <td>:</td>
                             <td>
-                                <label id="work" *ngIf="wrklblenable">{{perObj.wrkexp}}</label>                                
-                                <input type="text" name="txtwork" [(ngModel)]="perObj.wrkexp" *ngIf="!wrklblenable">
+                                <label id="work" [ngClass]="wrklblenable?'fieldView':'fieldViewToggle'">{{perObj.wrkexp}}</label>                                
+                                <input type="text" name="txtwork" [(ngModel)]="perObj.wrkexp" [ngClass]="!wrklblenable?'fieldView':'fieldViewToggle'">
                             </td>  
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('work');"></td>                          
                         </tr>
@@ -145,8 +150,8 @@
                             <td>Technologies</td>
                             <td>:</td>
                             <td>
-                                <label id="technology" *ngIf="techlblenable">{{perObj.technologies}}</label>                                
-                                <input type="text" name="txttechnology" [(ngModel)]="perObj.technologies" *ngIf="!techlblenable">
+                                <label id="technology" [ngClass]="techlblenable?'fieldView':'fieldViewToggle'">{{perObj.technologies}}</label>                                
+                                <input type="text" name="txttechnology" [(ngModel)]="perObj.technologies" [ngClass]="!techlblenable?'fieldView':'fieldViewToggle'">
                             </td>
                             <td><img class="profileeditimg" src="{{perObj.profileeditpic}}" (click)="Editvalue('technology');"></td>
                             <td></td>

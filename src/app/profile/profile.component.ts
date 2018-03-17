@@ -9,7 +9,7 @@ import { FormControl } from '@angular/forms';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent {
  
   perObj:person;
   editclk:boolean=false;
@@ -24,20 +24,22 @@ export class ProfileComponent implements OnInit {
   wrklblenable:boolean=true;
   techlblenable:boolean=true;
   constructor(private router: Router) { 
-    this.perObj={
-      name: "SravanthiPavuluri",      
-      email : "spavuluri@digitallyhnctech.com" ,
-      college :  "St.Ann's College",
-      city : "Guntur",
-      workingstatus :"Employee",
-      technologies:"Fullstack Development",
-      profilepic:"../assets/images/mypic.jpg",
-      specialization:"",
-      yearOfpass:"",
-      orgName:"",
-      wrkexp:"",
-      profileeditpic:"../assets/images/edit.png",
-    }     
+    // this.perObj={
+    //   name: "SravanthiPavuluri",      
+    //   email : "spavuluri@digitallyhnctech.com" ,
+    //   college :  "St.Ann's College",
+    //   city : "Guntur",
+    //   workingstatus :"Employee",
+    //   technologies:"Fullstack Development",
+    //   profilepic:"../assets/images/mypic.jpg",
+    //   specialization:"",
+    //   yearOfpass:"",
+    //   orgName:"",
+    //   wrkexp:"",
+    //   profileeditpic:"../assets/images/edit.png",
+    // }     
+    this.perObj = JSON.parse(localStorage.getItem("SravanthiPavuluri"));
+    
     this.emaillblenable=true;
     this.namelblenable=true;
     this.citylblenable=true;
@@ -48,9 +50,7 @@ export class ProfileComponent implements OnInit {
     this.wrklblenable=true;
     this.techlblenable=true;
   }
-
-  ngOnInit() {
-  }
+  
   EditProfile(){
       this.editclk=true;
       // this.perObj={
@@ -70,6 +70,7 @@ export class ProfileComponent implements OnInit {
   }
   SaveProfile(){
     this.editclk=false;
+    localStorage.setItem(this.perObj.name, JSON.stringify(this.perObj));
   }
   enableDisableData(event){
     //console.log("in enableDisableData"+event.target.checked);
@@ -108,5 +109,30 @@ export class ProfileComponent implements OnInit {
     else if(from=="technology"){     
       this.techlblenable=false;
     }
+  }
+
+  toggleClass(from:string){
+    const isValid=this.namelblenable && this.namelblenable;
+    //alert("isValid    :"+isValid);
+    // if(from=="name")
+    // {
+      if(isValid)
+      {
+        return {fieldView:isValid};
+      }else
+      {
+        return {fieldViewToggle:isValid};
+      }
+    // } 
+    // else if(from=="txtname")
+    // {
+    //   if(isValid)
+    //   {
+    //     return {fieldViewToggle:isValid};
+    //   }else
+    //   {
+    //     return {fieldView:isValid};
+    //   } 
+    // }
   }
 }

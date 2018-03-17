@@ -1,0 +1,42 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+.userstxt{
+    color:#00426f;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  .usersname{
+    float:left;
+    margin:20px;
+    font-size: 20px;
+  }
+  .listimg{
+    margin:20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    float:right;
+  }
+  .displayblocks{
+      float:left;
+      border:1px solid lightgray;
+      border-image-outset: 10px;
+      color:#00426f;
+      margin:10px 20px 5px 20px;
+      padding:10px;
+      width:285px;
+      box-shadow: 1px 1px 1px 1px lightgray;     
+  }
+  .headertxt{
+      font-size: 20px;
+      font-weight: bold;
+      padding:5px;
+      text-shadow:1px 1px;
+  }
+  .detailtxt{
+    font-size: 10px;
+    font-weight: none;
+    padding:5px;
+  }

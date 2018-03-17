@@ -36,5 +36,14 @@
     text-decoration: none;
   }
   .bgcontent{
-    padding-bottom:767px;
+    padding-bottom:0px;
+  }  
+
+  /* a:link { 
+    background-color:  #09568a;
+    opacity: 0.5;
   }
+  a:active {
+    background-color: #09568a;
+    opacity: 1;
+  } */

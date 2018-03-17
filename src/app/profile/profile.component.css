@@ -65,3 +65,9 @@ input[type=text]{
     width:200px;
     padding:5px;
 }
+.fieldView{
+    display:block;
+}
+.fieldViewToggle{
+    display:none;
+}

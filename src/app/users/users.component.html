@@ -1,0 +1,62 @@
+<div class="container-fluid userstxt">
+  <div class="row">
+      <div class="col-md-12">
+          <p class="usersname">Users</p>
+          <a routerLink="/login"><img class="listimg" src="../assets/images/logout.jpg"></a>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col-md-12">
+          <hr>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="displayblocks" *ngFor="let pobj of personArr">
+        <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                    <p class="headertxt">{{pobj.name}}</p>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-5">
+                      <p class="detailtxt">Email</p>
+                  </div>
+                  <div class="col-md-2">:</div>
+                  <div class="col-md-5">
+                      <p class="detailtxt">{{pobj.email}}</p>
+                  </div>
+              </div>
+              <div class="row">  
+                  <div class="col-md-5">
+                      <p class="detailtxt">College</p>
+                  </div>
+                  <div class="col-md-2">:</div>
+                  <div class="col-md-5">
+                      <p class="detailtxt">{{pobj.college}}</p>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-md-5">
+                      <p class="detailtxt">City</p>
+                  </div>
+                  <div class="col-md-2">:</div>
+                  <div class="col-md-5">
+                      <p class="detailtxt">{{pobj.city}}</p>
+                  </div>
+              </div>    
+              <div class="row">
+                  <div class="col-md-5">
+                      <p class="detailtxt">Working Status</p>
+                  </div>
+                  <div class="col-md-2">:</div>
+                  <div class="col-md-5">
+                      <p class="detailtxt">{{pobj.workingstatus}}</p>
+                  </div>
+              </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+ </div>
