@@ -3,6 +3,7 @@ import { person } from '../DataSet';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { FormControl } from '@angular/forms';
+import { PersonServiceService } from '../person-Service.service';
 
 @Component({
   selector: 'app-profile',
@@ -23,7 +24,7 @@ export class ProfileComponent {
   orglblenable:boolean=true;
   wrklblenable:boolean=true;
   techlblenable:boolean=true;
-  constructor(private router: Router) { 
+  constructor(private pservice:PersonServiceService,private router: Router) { 
     // this.perObj={
     //   name: "SravanthiPavuluri",      
     //   email : "spavuluri@digitallyhnctech.com" ,
@@ -38,7 +39,10 @@ export class ProfileComponent {
     //   wrkexp:"",
     //   profileeditpic:"../assets/images/edit.png",
     // }     
-    this.perObj = JSON.parse(localStorage.getItem("SravanthiPavuluri"));
+    //this.perObj = JSON.parse(localStorage.getItem("SravanthiPavuluri"));
+    this.perObj = pservice.getProfileInfo("SravanthiPavuluri");    
+    this.perObj.profilepic = "../assets/images/mypic.jpg";
+    this.perObj.profileeditpic = "../assets/images/edit.png";
     
     this.emaillblenable=true;
     this.namelblenable=true;
@@ -119,7 +123,8 @@ export class ProfileComponent {
       if(isValid)
       {
         return {fieldView:isValid};
-      }else
+      }
+      else
       {
         return {fieldViewToggle:isValid};
       }

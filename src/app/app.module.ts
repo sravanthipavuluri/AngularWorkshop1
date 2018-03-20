@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule,Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { PersonServiceService } from './person-Service.service';
+import {nodemailer} from 'nodemailer';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -40,9 +42,10 @@ const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    nodemailer,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [PersonServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

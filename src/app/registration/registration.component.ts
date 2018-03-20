@@ -2,6 +2,8 @@ import { Component , OnChanges } from '@angular/core';
 import { FormControl , FormGroup , FormBuilder , Validators} from '@angular/forms';
 import { workStatus,techInterest,register } from '../Dataset';
 import { Router } from '@angular/router';
+import { PersonServiceService } from '../person-Service.service';
+import * as nodemailer from 'nodemailer';
 
 
 @Component({
@@ -15,7 +17,7 @@ export class RegistrationComponent {
   workStatus = workStatus;
   techInterest = techInterest;
   robj:register;
-  constructor(private fb: FormBuilder,private router: Router) { 
+  constructor(private fb: FormBuilder,private router: Router,private pservice:PersonServiceService) { 
     this.createForm(); 
   }
 
@@ -45,6 +47,7 @@ export class RegistrationComponent {
     console.log("work : "+this.robj.work);
     console.log("tinterest : "+this.robj.tinterest);
     this.resetvalues();    
+    this.pservice.CallMail();
     this.router.navigate(['/confirm']);
     
   }
