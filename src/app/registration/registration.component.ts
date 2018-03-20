@@ -46,8 +46,7 @@ export class RegistrationComponent {
     console.log("mobile : "+this.robj.mobile);
     console.log("work : "+this.robj.work);
     console.log("tinterest : "+this.robj.tinterest);
-    this.resetvalues();    
-    this.pservice.CallMail();
+    //this.resetvalues();        
     this.router.navigate(['/confirm']);
     
   }

@@ -4,7 +4,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule,Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { PersonServiceService } from './person-Service.service';
-import {nodemailer} from 'nodemailer';
 
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -16,6 +15,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { Profile } from 'selenium-webdriver/firefox';
 import { ProfileeditComponent } from './profileedit/profileedit.component';
 import { UsersComponent } from './users/users.component';
+import { ThankComponent } from './thank/thank.component';
 
 const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
   {path:'reg',component:RegistrationComponent},
@@ -25,6 +25,7 @@ const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
   {path:'dashboard',component:DashboardComponent,
   children:[ {path:'profile',component:ProfileComponent,children:[{path:'profileedit',component:ProfileeditComponent}]},
              {path:'users',component:UsersComponent} ]},   
+  {path:'thank',component:ThankComponent},             
 ];
 @NgModule({
   declarations: [
@@ -36,13 +37,13 @@ const appRoutes: Routes = [{path:'',redirectTo:'/confirm',pathMatch:'full'},
     DashboardComponent,
     ProfileComponent,
     ProfileeditComponent,
-    UsersComponent
+    UsersComponent,
+    ThankComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    nodemailer,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [PersonServiceService],

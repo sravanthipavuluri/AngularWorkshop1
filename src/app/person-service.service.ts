@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { person } from './Dataset';
-import * as nodemailer from 'nodemailer';
 
 @Injectable()
 export class PersonServiceService {
@@ -35,7 +34,7 @@ export class PersonServiceService {
       //return this.personArr["name"]="Sravanthi Pavuluri";
    }
 
-   CallMail():void{
+   //CallMail():void{
     //nodemailer.createTestAccount((err, account) => {
             //     // create reusable transporter object using the default SMTP transport
             //     let transporter = nodemailer.createTransport({
@@ -72,34 +71,34 @@ export class PersonServiceService {
             // });
    //}
 
-                    let transporter = nodemailer.createTransport({
-                      host: 'smtp.example.com',
-                      port: 465,
-                      secure: true,
-                      auth: {
-                        user: 'spavuluri@digitallynctech.com',
-                        pass: 'rsbalaji20'
-                    }
-                  });
+                  //   let transporter = nodemailer.createTransport({
+                  //     host: 'smtp.example.com',
+                  //     port: 465,
+                  //     secure: true,
+                  //     auth: {
+                  //       user: 'spavuluri@digitallynctech.com',
+                  //       pass: 'rsbalaji20'
+                  //   }
+                  // });
 
-                  let mailOptions = {
-                    from: '"sravanthi" <spavuluri@digitallynctech.com>',
-                    to: 'sravanthipavuluri20@gmail.com',
-                    subject: 'Test email subject',
-                    text: 'Test email body'
-                  };
+                  // let mailOptions = {
+                  //   from: '"sravanthi" <spavuluri@digitallynctech.com>',
+                  //   to: 'sravanthipavuluri20@gmail.com',
+                  //   subject: 'Test email subject',
+                  //   text: 'Test email body'
+                  // };
 
-                  transporter.sendMail(mailOptions, (error, info) => {
-                  if (error) {
-                    return console.log(error);
-                  }
-                  console.log('Message %s sent: %s', info.messageId, info.response);
-                  })
+                  // transporter.sendMail(mailOptions, (error, info) => {
+                  // if (error) {
+                  //   return console.log(error);
+                  // }
+                  // console.log('Message %s sent: %s', info.messageId, info.response);
+                  // })
 
-   }
+   //}
 
-   callEmail():void{
+  //  callEmail():void{
      
-   }
+  //  }
 
 }
