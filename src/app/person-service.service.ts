@@ -7,7 +7,7 @@ export class PersonServiceService {
   personArr:Array<any>;  
      constructor() {
       this.personArr=[
-        {name:"SravanthiPavuluri",email:"Sravanthi@hotmail.com",college:"St.Ann's College",city:"Hyderabad",workingstatus:"Employee"},
+        {name:"SravanthiPavuluri ",email:"Sravanthi@hotmail.com",college:"St.Ann's College",city:"Hyderabad",workingstatus:"Employee"},
         {name:"Naveen Vedala",email:"Naveen@hotmail.com",college:"ECE NNRG College",city:"Hyderabad",workingstatus:"Employee"},
         {name:"Mahamod Mujaid",email:"Naveen@hotmail.com",college:"ECE NNRG College",city:"Hyderabad",workingstatus:"Employee"},
         {name:"Tarun Dilikar",email:"Naveen@hotmail.com",college:"ECE NNRG College",city:"Hyderabad",workingstatus:"Employee"},
